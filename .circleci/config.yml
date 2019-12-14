@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Run unittest
           command: python fizzbuzztest.py
-  build_images:
+  build_image:
     working_directory: ~/dearfizzbuzz
     docker:
       - image: circleci/python:3.6.1
