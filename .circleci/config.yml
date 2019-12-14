@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Run unittest
           command: python fizzbuzztest.py
-          
+
   build_image:
     working_directory: ~/dearfizzbuzz
     docker:
@@ -27,7 +27,7 @@ jobs:
       steps:
         - setup_remote_docker
         - attach_workspace:
-          at:
+          at: .
         - run: 
             docker build -t dearpyn/dearfizzbuzz:2 .
             docker login -u dearpyn -p $DOCKER_PASS
