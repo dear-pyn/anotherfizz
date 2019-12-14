@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  app:
+    image: dearpyn/dearfizzbuzz:1
+    ports:
+      - 5000:5000

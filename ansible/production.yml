@@ -1,0 +1,5 @@
+- name: production playbook
+  hosts: production
+  roles:
+    - deploy
+
