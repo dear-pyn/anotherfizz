@@ -23,15 +23,15 @@ jobs:
   build_image:
     working_directory: ~/anotherfizz
     docker:
-      - image: circleci/python:3.6.1
-      steps:
-        - setup_remote_docker
-        - attach_workspace:
-          at: .
-        - run: 
-            docker build -t dearpyn/dearfizzbuzz:2 .
-            docker login -u dearpyn -p $DOCKER_PASS
-            docker push dearpyn/dearfizzbuzz:2
+    - image: circleci/python:3.6.1
+    steps:
+      - setup_remote_docker
+      - attach_workspace:
+        at: .
+      - run: 
+          docker build -t dearpyn/dearfizzbuzz:2 .
+          docker login -u dearpyn -p $DOCKER_PASS
+          docker push dearpyn/dearfizzbuzz:2
 
   deploy: 
 workflows:
