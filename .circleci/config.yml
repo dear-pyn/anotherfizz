@@ -33,6 +33,18 @@ jobs:
           docker login -u dearpyn -p $DOCKER_PASS
           docker push dearpyn/dearfizzbuzz:2
 
+  deploy:
+    docker:
+    - image: circleci/python:3.6.1
+    steps:
+      - checkout
+      - run:
+          name: Install deployment script dependencies
+          command: cd ansible && pipenv install
+      - run:
+          name: Deploy to production
+          command: cd ansible && pipenv run ansible-playbook deploy-production.yml
+
 workflows:
   version: 2
   say-fizz-pipeline:
