@@ -33,7 +33,6 @@ jobs:
           docker login -u dearpyn -p $DOCKER_PASS
           docker push dearpyn/dearfizzbuzz:2
 
-  deploy: 
 workflows:
   version: 2
   say-fizz-pipeline:
