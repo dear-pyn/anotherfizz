@@ -19,6 +19,7 @@ jobs:
       - run:
           name: Run unittest
           command: python fizzbuzztest.py
+          
   build_image:
     working_directory: ~/dearfizzbuzz
     docker:
