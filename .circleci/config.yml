@@ -21,7 +21,7 @@ jobs:
           command: python fizzbuzztest.py
 
   build_image:
-    working_directory: ~/dearfizzbuzz
+    working_directory: ~/anotherfizz
     docker:
       - image: circleci/python:3.6.1
       steps:
@@ -32,6 +32,8 @@ jobs:
             docker build -t dearpyn/dearfizzbuzz:2 .
             docker login -u dearpyn -p $DOCKER_PASS
             docker push dearpyn/dearfizzbuzz:2
+
+  deploy: 
 workflows:
   version: 2
   say-fizz-pipeline:
